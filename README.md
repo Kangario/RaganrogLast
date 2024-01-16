@@ -5,4 +5,4 @@
 ### Так же в игре предусмотрено сохранение карты. Все данные записываются в json файл и потом из него и подгружаются уровни.
 ![logo](https://sun9-64.userapi.com/impg/55a1tEiEPo8nO4gpDF9keLBa_ni95HEMY3Dnxw/EG9EeFzmDM8.jpg?size=2557x1111&quality=96&sign=2783236e2dd6acf4680db243ff436835&type=album)
 ### Видео моей игры находится на яндекс диске.
-![video](https://disk.yandex.ru/i/w17aJb36Au17yA)
+https://disk.yandex.ru/i/w17aJb36Au17yA
