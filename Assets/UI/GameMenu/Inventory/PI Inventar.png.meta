@@ -1,0 +1,586 @@
+fileFormatVersion: 2
+guid: 5ac0095cf5bba6845a1bdb7ab2671f5f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PI Inventar_26
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a6a839a6df1064daeeb93569761ede
+      internalID: 1177352245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b2a178778505b4fa8cd33fee7ba4df
+      internalID: -229609602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e8eff1c9233da448d95dbc08c597e7
+      internalID: -1899393439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_38
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02709f71e475aef4b8415a4d427c8904
+      internalID: -2146017187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_39
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23dcf7e81babaa84198086b94d21b2c4
+      internalID: -16943422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bc3af1396758564697a87b858903266
+      internalID: -71644566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_50
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8450383e1c99534d85b5858cd558eb2
+      internalID: -2008310025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_51
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e2d780eb36cce42a348779a306d407
+      internalID: 1631431031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_63
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb488c2f1afd0d546ad94ecba3ca6266
+      internalID: 1099215843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_68
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45a3680eee5cb76479039bb02df5908f
+      internalID: 1869031907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_69
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ec11c0f67a62444a9df7cc18ea35e8
+      internalID: 1436356570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_0
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0ac1b3dc704ea49a5b1c61a78e7252
+      internalID: 351319249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 89
+        width: 154
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b07e5ebc443906409bf92832b97d4e6
+      internalID: -2105448507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 188
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3890aac782831d4449fc76cd83181ef3
+      internalID: -1546189452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PI Inventar_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 188
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 228ba56d4e585954f82b2729f4c41178
+      internalID: -201332452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PI Inventar_0: 351319249
+      PI Inventar_1: -2105448507
+      PI Inventar_10: 1055417749
+      PI Inventar_100: -1217911410
+      PI Inventar_101: 10646466
+      PI Inventar_102: 1610057
+      PI Inventar_103: -111143211
+      PI Inventar_104: -480718868
+      PI Inventar_105: 890074800
+      PI Inventar_106: 2047623178
+      PI Inventar_107: -2076507137
+      PI Inventar_108: 719200799
+      PI Inventar_109: 330645113
+      PI Inventar_11: -1781662654
+      PI Inventar_110: 1295841680
+      PI Inventar_111: -255653600
+      PI Inventar_112: -666546851
+      PI Inventar_113: 470560863
+      PI Inventar_114: 1499071116
+      PI Inventar_115: 1711108616
+      PI Inventar_116: 1355599436
+      PI Inventar_117: 1223416104
+      PI Inventar_118: 1568999223
+      PI Inventar_119: -19530058
+      PI Inventar_12: -1967603449
+      PI Inventar_120: -1552578215
+      PI Inventar_121: -1121455579
+      PI Inventar_122: 456265429
+      PI Inventar_123: -1068121463
+      PI Inventar_124: -901204841
+      PI Inventar_125: -476143104
+      PI Inventar_126: -997164780
+      PI Inventar_127: -610531645
+      PI Inventar_128: -464426952
+      PI Inventar_129: 635195839
+      PI Inventar_13: 915549136
+      PI Inventar_130: -1344686764
+      PI Inventar_131: 1096152738
+      PI Inventar_132: -1380893678
+      PI Inventar_133: -1485647829
+      PI Inventar_134: -1077819410
+      PI Inventar_135: 604454038
+      PI Inventar_136: 2035284992
+      PI Inventar_137: 394787848
+      PI Inventar_138: -1466639240
+      PI Inventar_139: 276137257
+      PI Inventar_14: -1315497989
+      PI Inventar_140: 1264057115
+      PI Inventar_141: -1509437404
+      PI Inventar_142: 1591039969
+      PI Inventar_143: 1111532725
+      PI Inventar_15: 1590567058
+      PI Inventar_16: -1027908539
+      PI Inventar_17: -21272237
+      PI Inventar_18: -12772313
+      PI Inventar_19: -1359677412
+      PI Inventar_2: -1546189452
+      PI Inventar_20: 471771622
+      PI Inventar_21: 139184457
+      PI Inventar_22: 542859243
+      PI Inventar_23: 455422496
+      PI Inventar_24: 1551948877
+      PI Inventar_25: 1218346560
+      PI Inventar_26: 1177352245
+      PI Inventar_27: -229609602
+      PI Inventar_28: -1899393439
+      PI Inventar_29: 1086318865
+      PI Inventar_3: -201332452
+      PI Inventar_30: 1792002986
+      PI Inventar_31: 164087486
+      PI Inventar_32: 1152213842
+      PI Inventar_33: 1880179884
+      PI Inventar_34: 369463151
+      PI Inventar_35: 229757676
+      PI Inventar_36: -1383791545
+      PI Inventar_37: 45129399
+      PI Inventar_38: -2146017187
+      PI Inventar_39: -16943422
+      PI Inventar_4: -1061452332
+      PI Inventar_40: -71644566
+      PI Inventar_41: -255735691
+      PI Inventar_42: -1710141982
+      PI Inventar_43: -1351756671
+      PI Inventar_44: 1797057620
+      PI Inventar_45: -246357686
+      PI Inventar_46: 721083984
+      PI Inventar_47: -319846766
+      PI Inventar_48: -620010668
+      PI Inventar_49: -2097561095
+      PI Inventar_5: 1932903291
+      PI Inventar_50: -2008310025
+      PI Inventar_51: 1631431031
+      PI Inventar_52: 707515870
+      PI Inventar_53: -2004032247
+      PI Inventar_54: 1327673311
+      PI Inventar_55: -2718544
+      PI Inventar_56: 56946052
+      PI Inventar_57: 1442381275
+      PI Inventar_58: 620955271
+      PI Inventar_59: -1367047090
+      PI Inventar_6: 2104305070
+      PI Inventar_60: 1775026005
+      PI Inventar_61: 877220272
+      PI Inventar_62: -952391339
+      PI Inventar_63: 1099215843
+      PI Inventar_64: 169099853
+      PI Inventar_65: -296019563
+      PI Inventar_66: -487941657
+      PI Inventar_67: 1571928495
+      PI Inventar_68: 1869031907
+      PI Inventar_69: 1436356570
+      PI Inventar_7: 1812495855
+      PI Inventar_70: -317422227
+      PI Inventar_71: -1948168437
+      PI Inventar_72: 1250678940
+      PI Inventar_73: 187222203
+      PI Inventar_74: 875622696
+      PI Inventar_75: 815145997
+      PI Inventar_76: 703588975
+      PI Inventar_77: -672918684
+      PI Inventar_78: 546695819
+      PI Inventar_79: 589591285
+      PI Inventar_8: 113597478
+      PI Inventar_80: 401326240
+      PI Inventar_81: 1443892354
+      PI Inventar_82: -61438949
+      PI Inventar_83: -1279289536
+      PI Inventar_84: 1936737003
+      PI Inventar_85: -2066411390
+      PI Inventar_86: -738137999
+      PI Inventar_87: 725872580
+      PI Inventar_88: -1760577363
+      PI Inventar_89: 636507025
+      PI Inventar_9: -1485979084
+      PI Inventar_90: -1145289980
+      PI Inventar_91: -1043553730
+      PI Inventar_92: 2133195524
+      PI Inventar_93: -957809569
+      PI Inventar_94: 356602016
+      PI Inventar_95: -1790291203
+      PI Inventar_96: -30147514
+      PI Inventar_97: 512559822
+      PI Inventar_98: -1678660382
+      PI Inventar_99: -531311344
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

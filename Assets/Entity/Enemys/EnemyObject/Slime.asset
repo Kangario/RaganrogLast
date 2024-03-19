@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4ffdfbe2d8b9b458390df2736a1a46, type: 3}
+  m_Name: Slime
+  m_EditorClassIdentifier: 
+  ID_Enemy: 0
+  Name_Enemy: Slime
+  Type_Move_Enemy: 1
+  Image_Enemy: {fileID: 1953500592, guid: 9c0748f38db7e0b4e9fdd449b0d1fe12, type: 3}
+  Animator_Enemy: {fileID: 9100000, guid: 43f5d97ae38f748489cc95b12166ed9c, type: 2}
+  Health_Enemy:
+    value: 1
+    Threshold: 10
+  Mana_Enemy:
+    value: 10
+    Threshold: 10
+  Stamina_Enemy:
+    value: 10
+    Threshold: 10
+  Experience_Drop_Enemy:
+    experience: 10
+    experience_threshold: 10
+    level: 1
+  Damage_Enemy: 0
+  Interval_Attack_Enemy: 1
+  Speed_Enemy: 0.6
+  Radius_Attack_Enemy: 0.25
+  Vision_Field_Enemy:
+  - {x: 1, y: -1}
+  - {x: 1, y: 1}
+  - {x: -1, y: 1}
+  - {x: -1, y: -1}
