@@ -10,6 +10,7 @@ using static UnityEditor.Progress;
 
 public class Inventory_Controller : MonoBehaviour
 {
+    private UIToolKitConnector _inventor;
     [SerializeField] GameObject takeButton;
     public InventoryObject[] items;
     public List<SlotComponent> slots;
@@ -17,6 +18,7 @@ public class Inventory_Controller : MonoBehaviour
 
     public void Start()
     {
+        _inventor = GetComponent<UIToolKitConnector>();
         Event_Items.InItem += InItem;
         Event_Items.OutItem += OutItem;
         slots = SlotCounter.slots;

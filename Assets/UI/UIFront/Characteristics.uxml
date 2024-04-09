@@ -1,0 +1,58 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/UIFront/Characteristics.uss?fileID=7433441132597879392&amp;guid=10aa16e7c9eb90c4f91df7a672cf1002&amp;type=3#Characteristics" />
+    <ui:VisualElement name="Inventory" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; overflow: hidden; width: auto; height: auto; visibility: visible; align-self: auto; justify-content: flex-end; transition-duration: 1s; transition-timing-function: linear;">
+        <ui:VisualElement name="Header" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.39); width: auto; height: 10%; align-self: auto; align-items: flex-end; flex-direction: row; overflow: hidden;">
+            <ui:Button text="Button" display-tooltip-when-elided="true" name="TabInventory" class="styleTabs" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/Group%201.png?fileID=2800000&amp;guid=5065ffc8ac050614e9f71ed8355a0474&amp;type=3#Group 1&apos;); background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(122, 122, 122); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" name="TabStats" class="styleTabs" style="background-color: rgba(188, 188, 188, 0); background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/Group%202.png?fileID=2800000&amp;guid=0c96964348c20984999d548c44eb2778&amp;type=3#Group 2&apos;); -unity-background-image-tint-color: rgb(255, 255, 255); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" tabindex="0" name="TabTreeSkills" class="styleTabs" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/Group%203.png?fileID=2800000&amp;guid=9c3215da5a20f7c4ba1b60178e874584&amp;type=3#Group 3&apos;); background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(122, 122, 122); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" name="TabSaveGame" class="styleTabs" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/Group%204.png?fileID=2800000&amp;guid=bef8d184ededbc54bbd1f79fd605c215&amp;type=3#Group 4&apos;); background-color: rgba(188, 188, 188, 0); -unity-background-image-tint-color: rgb(122, 122, 122); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" name="TabCloseInventory" class="styleTabs" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/Group%205.png?fileID=2800000&amp;guid=07503785e916f8f41a8bd4d65c402917&amp;type=3#Group 5&apos;); background-color: rgba(188, 188, 188, 0); -unity-background-image-tint-color: rgb(255, 255, 255); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; align-self: auto; flex-direction: column; margin-left: 66.5%;" />
+        </ui:VisualElement>
+        <ui:VisualElement focusable="false" name="Background" style="flex-grow: 1; background-color: rgb(0, 0, 0); align-self: auto; align-items: auto; width: auto; -unity-text-align: lower-left; -unity-background-scale-mode: stretch-to-fill; height: 90%; justify-content: flex-start; flex-direction: row; overflow: hidden; margin-bottom: 0;">
+            <ui:VisualElement name="Attributes" class="panelGroup" style="flex-grow: 1; background-color: rgb(45, 45, 45); align-self: auto; width: 30%;">
+                <ui:VisualElement name="Header" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/Rectangle%2054.png?fileID=2800000&amp;guid=d4be3a3500b5f9d49b7517410ca88788&amp;type=3#Rectangle 54&apos;); width: 35%; margin-left: 30%; align-items: center; overflow: hidden;">
+                    <ui:Label tabindex="-1" text="Attributes" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 20px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Body" style="flex-grow: 1; height: 95%; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; align-self: stretch;">
+                    <ui:VisualElement name="GroupAttribute" class="attribute" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:VisualElement name="Ico" class="attributeIco" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2017.png?fileID=2800000&amp;guid=295a7b45d6034c7458d1de004c05f00d&amp;type=3#image 17&apos;);" />
+                        <ui:Label tabindex="-1" text="Strength" display-tooltip-when-elided="true" class="attributeName" />
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" class="attributeValue" />
+                        <ui:Button text="Button" display-tooltip-when-elided="true" class="attributeButton" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="GroupAttribute" class="attribute" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:VisualElement name="Ico" class="attributeIco" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2018.png?fileID=2800000&amp;guid=010e5417403a137428e71b2cd267c8f7&amp;type=3#image 18&apos;);" />
+                        <ui:Label tabindex="-1" text="Dexterity" display-tooltip-when-elided="true" class="attributeName" />
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" class="attributeValue" />
+                        <ui:Button text="Button" display-tooltip-when-elided="true" class="attributeButton" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="GroupAttribute" class="attribute" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:VisualElement name="Ico" class="attributeIco" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2019.png?fileID=2800000&amp;guid=1bb2e5e8b37430c4eb1886ed83d420f6&amp;type=3#image 19&apos;);" />
+                        <ui:Label tabindex="-1" text="Constitution" display-tooltip-when-elided="true" class="attributeName" style="padding-right: 16%;" />
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" class="attributeValue" />
+                        <ui:Button text="Button" display-tooltip-when-elided="true" class="attributeButton" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="GroupAttribute" class="attribute" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:VisualElement name="Ico" class="attributeIco" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2020.png?fileID=2800000&amp;guid=a36c9be15743ad843a6922154ddf631d&amp;type=3#image 20&apos;);" />
+                        <ui:Label tabindex="-1" text="Intelligence" display-tooltip-when-elided="true" class="attributeName" style="padding-right: 18%;" />
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" class="attributeValue" />
+                        <ui:Button text="Button" display-tooltip-when-elided="true" class="attributeButton" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="GroupAttribute" class="attribute" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:VisualElement name="Ico" class="attributeIco" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2021.png?fileID=2800000&amp;guid=381c1295183e6594cba1e7a2246f289b&amp;type=3#image 21&apos;);" />
+                        <ui:Label tabindex="-1" text="Wisdom" display-tooltip-when-elided="true" class="attributeName" style="padding-right: 28%;" />
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" class="attributeValue" />
+                        <ui:Button text="Button" display-tooltip-when-elided="true" class="attributeButton" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="GroupAttribute" class="attribute" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                        <ui:VisualElement name="Ico" class="attributeIco" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2022.png?fileID=2800000&amp;guid=101644fbcb07139419b87c003085c7b4&amp;type=3#image 22&apos;);" />
+                        <ui:Label tabindex="-1" text="Charisma" display-tooltip-when-elided="true" class="attributeName" />
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" class="attributeValue" />
+                        <ui:Button text="Button" display-tooltip-when-elided="true" class="attributeButton" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Stats" class="panelGroup" style="flex-grow: 1; background-color: rgb(45, 45, 45); align-self: auto; margin-left: 0; width: 60%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
