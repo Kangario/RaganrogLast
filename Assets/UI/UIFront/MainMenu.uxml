@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/UIFront/MainMenu.uss?fileID=7433441132597879392&amp;guid=a3433471933f1274791d6ca6fa72903d&amp;type=3#MainMenu" />
+    <ui:VisualElement name="MainMenu" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 25%; height: 100%; justify-content: center; align-items: stretch; align-self: flex-start; padding-bottom: 301px;">
+        <ui:Button text="Play" display-tooltip-when-elided="true" name="Play" class="hoverStyle" style="background-color: rgba(188, 188, 188, 0); -unity-font-style: bold; transition-duration: 0.2s; transition-timing-function: linear;" />
+        <ui:Button text="Load" display-tooltip-when-elided="true" name="Load" class="hoverStyle" style="-unity-font-style: bold; background-color: rgba(188, 188, 188, 0); transition-duration: 0.2s; transition-timing-function: linear;" />
+        <ui:Button text="Exit" display-tooltip-when-elided="true" name="Exit" class="hoverStyle" style="background-color: rgba(188, 188, 188, 0); -unity-font-style: bold; transition-duration: 0.2s; transition-timing-function: linear;" />
+    </ui:VisualElement>
+</ui:UXML>

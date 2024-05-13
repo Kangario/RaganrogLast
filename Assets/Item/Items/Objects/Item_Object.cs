@@ -9,7 +9,6 @@ public class Item_Object : ScriptableObject
     {
         ID_Item = item.ID_Item;
         nam_Item = item.nam_Item;
-        ico_Item_Texture= item.ico_Item_Texture;
         percent_Drop_Item= item.percent_Drop_Item;
         qantity_Item= item.qantity_Item;
     }
@@ -18,7 +17,6 @@ public class Item_Object : ScriptableObject
     public TypeItem type;
     public string nam_Item;
     public Sprite ico_Item;
-    public Texture2D ico_Item_Texture;
     public float percent_Drop_Item;
     public LimitedNumber qantity_Item;
 }

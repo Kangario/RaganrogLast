@@ -1,0 +1,36 @@
+.hoverStyle:hover {
+    font-size: 80px;
+}
+
+.hoverStyle {
+    font-size: 70px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 60px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    margin-left: 80px;
+    margin-right: 0;
+    margin-top: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.hoverStyle:selected {
+    font-size: 80px;
+    color: rgb(149, 149, 149);
+    padding-left: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID_Item: 1
   type: 0
   nam_Item: Gold
-  ico_Item: {fileID: -1656277570, guid: c397f0f130eddc441b6b3eab2771e1c4, type: 3}
+  ico_Item: {fileID: 21300000, guid: c2c0bc4053e26fd43ae2aea0131c0713, type: 3}
   percent_Drop_Item: 100
   qantity_Item:
     value: 1
