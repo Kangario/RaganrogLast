@@ -22,7 +22,7 @@ public class EquipComponent : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     public void DisplaySlot(InventoryObject item)
     {
         this.item = item;
-        image.sprite = item.Item.ico_Item;
+      //  image.sprite = item.Item.ico_Item;
         image.color = new Color(255, 255, 255, 255);
     }
     public void ResetSlot()
@@ -34,13 +34,13 @@ public class EquipComponent : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        // Запоминаем начальную позицию при нажатии
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         originalPosition = gameObject.transform.position;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        // Возвращаем объект на начальную позицию при отпускании пальца
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         gameObject.transform.position = originalPosition;
         controller.CheckDistance(gameObject, localPointerPosition, containe);
 

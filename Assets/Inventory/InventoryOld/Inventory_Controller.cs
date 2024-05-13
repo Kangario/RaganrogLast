@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 
 public class Inventory_Controller : MonoBehaviour
@@ -21,7 +20,7 @@ public class Inventory_Controller : MonoBehaviour
         _inventor = GetComponent<UIToolKitConnector>();
         Event_Items.InItem += InItem;
         Event_Items.OutItem += OutItem;
-        slots = SlotCounter.slots;
+        //slots = SlotCounter.slots;
         CreateInventory();
     }
 
@@ -29,7 +28,7 @@ public class Inventory_Controller : MonoBehaviour
     {
        for (int i =0; i < items.Length; i++)
         {
-           //Если слот пустой то просто добавляем
+           
                 if (CheckSlots(items[i]))
                 {
 
@@ -39,7 +38,7 @@ public class Inventory_Controller : MonoBehaviour
                 }
                 else
                 {   
-                //Если слот не пустой проверяем количество предметов в слоте и можем ли мы туда их положить
+              
                     if (CheckValue(items[i]))
                     {
                         AddItem(takedItem[takedItem.Count - 1], i, items[i].slotStatus);
@@ -52,7 +51,7 @@ public class Inventory_Controller : MonoBehaviour
 
     public bool CheckValue(InventoryObject item)
     {   
-        //Проверка если предмет который мы подобрали такой же как и в инвенторе то тогда увеличиваем их колличество
+        
         if (takedItem[takedItem.Count - 1].GetComponent<RItem_Component>().item == item.Item)
         {
             if (item.qantity_Item.value < item.qantity_Item.Threshold)
@@ -68,7 +67,7 @@ public class Inventory_Controller : MonoBehaviour
         }
         else
         {
-            //Если такого предмета в инветаре нет то пропускаем
+           
             return false;
         }
     }
@@ -88,13 +87,13 @@ public class Inventory_Controller : MonoBehaviour
             switch (ItemStatus)
             {
                 case Slot_Status.Unfilled:
-                    Debug.Log("Добавляем +1 к " + i);
+                    Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ +1 пїЅ " + i);
                     items[i].qantity_Item.value += item.GetComponent<RItem_Component>().item.qantity_Item.value;
                     UpdateInventory(i);
                     Destroy(item);
                     break;
                 case Slot_Status.NoItem:
-                    Debug.Log("Добавляем итем");
+                    Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
                     items[i].Item = item.GetComponent<RItem_Component>().item;
                     items[i].qantity_Item = item.GetComponent<RItem_Component>().item.qantity_Item;
                     items[i].slotStatus = Slot_Status.Unfilled;
@@ -106,11 +105,11 @@ public class Inventory_Controller : MonoBehaviour
     }
 
     public void AddItemSlot(SlotComponent item1, SlotComponent item2, SlotType SlotStatus)
-    {   // Проверяем статуст слота, инвентарь - ЭКИПИРОВКА, или же экипировка - ИНВЕНТАРЬ
+    {   
         switch (SlotStatus)
         {
             case SlotType.EquipSlot:
-                // Если у нас слот экипировки равен пустоте то добовляем
+                
                 
                 if (item2.typeItem == item1.item.Item.type)
                 {
@@ -119,7 +118,7 @@ public class Inventory_Controller : MonoBehaviour
                         items[item2.ID_Slot] = items[item1.ID_Slot];
                         items[item2.ID_Slot].qantity_Item.value -= (items[item2.ID_Slot].qantity_Item.value - 1);
                         items[item1.ID_Slot].qantity_Item.value -= 1;
-                        //Так же удаляем объект в инвентаре если у него 0 итемов
+
                         if (items[item1.ID_Slot].qantity_Item.value == 0)
                         {
                             items[item1.ID_Slot] = new InventoryObject();
@@ -129,10 +128,10 @@ public class Inventory_Controller : MonoBehaviour
 
                 break;
             case SlotType.InventSlot:
-                //если у нас и слот экипировки и слот инвентаря равны
+              
                 if (item2.item.Item == item1.item.Item)
                 {   
-                    //Мы проверяем не заполнен ли слот инвенторя и если нет добавляемм в ином случае ниче не происходит
+                  
                     if (items[item2.ID_Slot].qantity_Item.value < items[item2.ID_Slot].qantity_Item.Threshold)
                     {
                         items[item2.ID_Slot].qantity_Item.value += items[item1.ID_Slot].qantity_Item.value;
@@ -141,7 +140,6 @@ public class Inventory_Controller : MonoBehaviour
                 }
                 else
                 {
-                    //Если не равны слоты, то перебираемм все и находим либо пустой слот с типом Инветарь или же находим похожие слоты и проверяем их на заполненность
                     for (int i = 0; i < slots.Count; i++)
                     {
                         if (slots[i].GetComponent<SlotComponent>().typeSlot == SlotType.InventSlot)
@@ -174,7 +172,7 @@ public class Inventory_Controller : MonoBehaviour
     {
         if (item1.item.Item == item2.item.Item)
         {
-            //Изменить все на Items а не на slots в inventory_Object_Component
+          
             if (item2.item.qantity_Item.value + item1.item.qantity_Item.value <= item2.item.qantity_Item.Threshold)
             {
                 items[item2.ID_Slot].qantity_Item.value += items[item1.ID_Slot].qantity_Item.value;

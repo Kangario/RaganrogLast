@@ -19,4 +19,4 @@ MonoBehaviour:
   percent_Drop_Item: 100
   qantity_Item:
     value: 1
-    Threshold: 100
+    Threshold: 1

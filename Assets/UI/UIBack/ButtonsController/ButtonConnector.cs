@@ -9,6 +9,8 @@ public class ButtonConnector : UIToolKitConnectable
 {
     public List<ButtonCall> buttons;
 
+    public List<ButtonCall<string>> ButtonsType;
+
     private void Awake() => Connect();
 
     private void Start()
@@ -18,5 +20,10 @@ public class ButtonConnector : UIToolKitConnectable
             button.Initialization();
             _rootElement.Q<Button>(button.ButtonName).clicked += button.ButtonAction;
         }
-    } 
+        foreach (ButtonCall<string> buttonType in ButtonsType)
+        {
+            buttonType.Initialization();
+          //  _rootElement.Q<Button>(buttonType.ButtonName).clicked += buttonType.ButtonAction;
+        }
+    }
 }

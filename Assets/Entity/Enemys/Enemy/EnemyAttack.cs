@@ -39,6 +39,23 @@ namespace REnemy
                 enemy_Stats.Health = new LimitedNumber(0, 10);
             }
         }
+        public bool ApplyDamageCheck(float damage)
+        {
+            if (enemy_Stats.Health.value > 0)
+            {
+                enemy_Stats.ChangeStats(PlayerStat.Health, -damage);
+                return false;
+            }
+            else
+            {
+                DeadEvent.OnEnemyDied(currentObject);
+                Charactres_Events.SetExperience(enemy_Stats.GetExpirience_Drop());
+                DeadEvent.onEnemyDropItem(currentObject.transform);
+                enemy_Stats.Health = new LimitedNumber(0, 10);
+                return true;
+            }
+        }
+
         public IEnumerator AttackWait(float AttackRange, float Damage, float Interval_Attack_Enemy, GameObject target)
         {
             while (true)

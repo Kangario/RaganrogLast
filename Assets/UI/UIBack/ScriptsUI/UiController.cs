@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class UiController : MonoBehaviour
+public class UIController : MonoBehaviour
 {
     [SerializeField] private GameObject movedUiDefoultPos;
     [SerializeField] private GameObject movedUi;
