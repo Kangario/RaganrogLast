@@ -1,21 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection.Emit;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-public class MainMenuController : MonoBehaviour
+using UnityEngine.UIElements;
+public class MainMenuController : UIToolKitConnectable
 {
     float currentWindow = 0;
     [SerializeField] private Camera m_Camera;
-    [SerializeField] private GameObject[] windowGame;
-    [SerializeField] private GameObject nameWorld;
-    [SerializeField] private GameObject sizeWorld;
-    [SerializeField] private GameObject listWorlds;
-    [SerializeField] private Text labelWorlds;
+    //[SerializeField] private GameObject[] windowGame;
+    [SerializeField] private string nameWorld;
+    [SerializeField] private string sizeWorld;
+    [SerializeField] private string listWorlds;
+    private TextField nameWorldInput;
+    private Slider sizeWorldSlider;
+    private DropdownField listWorld;
+
+    private void Awake() => Connect();
+
     private void Start()
     {
+        nameWorldInput = _rootElement.Q<TextField>(nameWorld);
+        sizeWorldSlider = _rootElement.Q<Slider>(sizeWorld);
         string folderPath = "Assets/Worlds/";
         string[] files = Directory.GetFiles(folderPath);
         List<string> fileNames = new List<string>();
@@ -28,8 +34,9 @@ public class MainMenuController : MonoBehaviour
                 fileNames.Add(fileName);
             }
         }
-        listWorlds.GetComponent<Dropdown>().ClearOptions();
-        listWorlds.GetComponent<Dropdown>().AddOptions(fileNames);
+        listWorld = _rootElement.Q<DropdownField>(listWorlds);
+        listWorld.choices.Clear();
+        listWorld.choices = fileNames;
     }
 
     public void Next()
@@ -49,23 +56,10 @@ public class MainMenuController : MonoBehaviour
     public void CreateLevel()
     {
         GameObject transferPref = new GameObject();
-            transferPref.AddComponent<DataTransfer>();
-            transferPref.GetComponent<DataTransfer>().nameWorld = nameWorld.GetComponent<InputField>().text;
+        transferPref.AddComponent<DataTransfer>();
+        transferPref.GetComponent<DataTransfer>().nameWorld = nameWorldInput.value;
         transferPref.name = "TransferData";
-        
-            switch (sizeWorld.GetComponent<Dropdown>().value)
-            {
-                case 0:
-                    transferPref.GetComponent<DataTransfer>().sizeWorld = 100;
-                    break;
-                case 1:
-                    transferPref.GetComponent<DataTransfer>().sizeWorld = 200;
-                    break;
-                case 2:
-                    transferPref.GetComponent<DataTransfer>().sizeWorld = 300;
-                    break;
-        }
-        
+        transferPref.GetComponent<DataTransfer>().sizeWorld = (int)sizeWorldSlider.value;
         SceneManager.LoadScene(0);
 
     }
@@ -73,7 +67,7 @@ public class MainMenuController : MonoBehaviour
     {
         GameObject transferPref = new GameObject();
         transferPref.AddComponent<DataTransfer>();
-        transferPref.GetComponent<DataTransfer>().nameWorld = labelWorlds.text;
+        transferPref.GetComponent<DataTransfer>().nameWorld = listWorld.value;
         transferPref.name = "TransferData";
         transferPref.GetComponent<DataTransfer>().LoadWorld = true;
         SceneManager.LoadScene(0);

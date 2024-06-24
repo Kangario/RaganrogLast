@@ -1,8 +1,26 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/UIFront/MainMenu.uss?fileID=7433441132597879392&amp;guid=a3433471933f1274791d6ca6fa72903d&amp;type=3#MainMenu" />
-    <ui:VisualElement name="MainMenu" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 25%; height: 100%; justify-content: center; align-items: stretch; align-self: flex-start; padding-bottom: 301px;">
-        <ui:Button text="Play" display-tooltip-when-elided="true" name="Play" class="hoverStyle" style="background-color: rgba(188, 188, 188, 0); -unity-font-style: bold; transition-duration: 0.2s; transition-timing-function: linear;" />
-        <ui:Button text="Load" display-tooltip-when-elided="true" name="Load" class="hoverStyle" style="-unity-font-style: bold; background-color: rgba(188, 188, 188, 0); transition-duration: 0.2s; transition-timing-function: linear;" />
-        <ui:Button text="Exit" display-tooltip-when-elided="true" name="Exit" class="hoverStyle" style="background-color: rgba(188, 188, 188, 0); -unity-font-style: bold; transition-duration: 0.2s; transition-timing-function: linear;" />
+    <ui:VisualElement name="MainMenu" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 25%; height: 100%; justify-content: center; align-items: stretch; align-self: flex-start; padding-bottom: 301px; display: flex; transition-timing-function: linear; transition-duration: 0.25s;">
+        <ui:Button text="Play" display-tooltip-when-elided="true" name="Play" class="hoverStyle" style="-unity-font-style: bold; transition-duration: 0.2s; transition-timing-function: linear;" />
+        <ui:Button text="Load" display-tooltip-when-elided="true" name="Load" class="hoverStyle" style="-unity-font-style: bold; transition-duration: 0.2s; transition-timing-function: linear;" />
+        <ui:Button text="Exit" display-tooltip-when-elided="true" name="Exit" class="hoverStyle" style="-unity-font-style: bold; transition-duration: 0.2s; transition-timing-function: linear;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="GenerateWorld" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 40%; height: 100%; justify-content: center; align-items: stretch; align-self: flex-start; padding-bottom: 301px; position: absolute; display: flex; transition-duration: 0.25s; transition-timing-function: linear; bottom: 1500px;">
+        <ui:VisualElement name="Hader" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: space-between; align-items: stretch;">
+            <ui:Button display-tooltip-when-elided="true" name="BackButton" style="background-image: url(&apos;project://database/Assets/Sprites/UI/MainMenu/17699.png?fileID=2800000&amp;guid=1677811a3dc8e1c4aa7952114547ab14&amp;type=3#17699&apos;); -unity-background-scale-mode: scale-to-fit; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; background-color: rgba(188, 188, 188, 0); width: 10%; height: 21%; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 0;" />
+            <ui:TextField picking-mode="Ignore" label="Name world" value="Name" name="NameWorld" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-font-style: bold; font-size: 25px; background-color: rgba(0, 0, 0, 0); color: rgb(0, 0, 0);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Body" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); justify-content: center; align-items: stretch;">
+            <ui:Slider picking-mode="Ignore" label="Size World" value="42" high-value="100" name="SizeWorld" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; background-color: rgba(0, 0, 0, 0); color: rgb(27, 27, 27); justify-content: space-between;">
+                <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="Min" style="left: -516px; -unity-font-style: bold;" />
+                <ui:Label tabindex="-1" text="100" display-tooltip-when-elided="true" name="Max" style="left: -50px; -unity-font-style: bold;" />
+            </ui:Slider>
+            <ui:Button text="Generate" display-tooltip-when-elided="true" name="Generate" class="hoverStyle" style="margin-top: 45px; background-color: rgba(188, 188, 188, 0); font-size: 45px; margin-left: 0;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="LoadGame" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 25%; height: 100%; justify-content: flex-end; align-items: stretch; align-self: flex-start; padding-bottom: 301px; display: flex; transition-timing-function: linear; transition-duration: 0.25s; position: absolute; left: -1500px;">
+        <ui:Button display-tooltip-when-elided="true" name="BackButtonLoad" style="background-image: url(&apos;project://database/Assets/Sprites/UI/MainMenu/17699.png?fileID=2800000&amp;guid=1677811a3dc8e1c4aa7952114547ab14&amp;type=3#17699&apos;); -unity-background-scale-mode: scale-to-fit; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 50px; padding-left: 0; padding-right: 0; padding-top: 0; background-color: rgba(188, 188, 188, 0); width: 10%; height: 21%; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; padding-bottom: 0;" />
+        <ui:DropdownField index="-1" choices="System.Collections.Generic.List`1[System.String]" name="ListWorlds" style="margin-bottom: 75%; width: 100%; height: 10%;" />
+        <ui:Button text="Load" display-tooltip-when-elided="true" name="LoadButt" class="hoverStyle" style="-unity-font-style: bold; transition-duration: 0.2s; transition-timing-function: linear; margin-bottom: 0; margin-left: 0; margin-top: 0;" />
     </ui:VisualElement>
 </ui:UXML>

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ground
   m_EditorClassIdentifier: 
   nameObject: 0
-  spriteObject: {fileID: -533605022, guid: e221c106ad4844148ac38b33aacbe847, type: 3}
+  spriteObject: {fileID: 21300000, guid: b3775bb82375340469af5b365d8bd63f, type: 3}
   rangeHeightMin: 0.25
   rangeHeightMax: 0.35
   id: 10

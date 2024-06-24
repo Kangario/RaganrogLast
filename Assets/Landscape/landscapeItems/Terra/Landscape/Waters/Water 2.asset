@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Water 2
   m_EditorClassIdentifier: 
   nameObject: 4
-  spriteObject: {fileID: -654146810, guid: e221c106ad4844148ac38b33aacbe847, type: 3}
+  spriteObject: {fileID: 21300000, guid: 8c7cb42c5cd19da438a2907245a2a81a, type: 3}
   rangeHeightMin: 0
   rangeHeightMax: 0.2
   id: 42

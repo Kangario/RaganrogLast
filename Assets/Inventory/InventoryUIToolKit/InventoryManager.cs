@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPlayer;
 using UnityEngine.UIElements;
-using Unity.VisualScripting;
 
 public class InventoryManager : UIToolKitConnectable
 {
-    [SerializeField] private string _slotName = "Slot";
+    [SerializeField] private string _slotName = "Slot"; 
+    [SerializeField] private string _slotGroupName = "SlotMoveLayot";
+    private VisualElement _slotGroup;
     private List<Button> _slots = new List<Button>();
     public InventoryObject[] Items;
     private Button _selectedSlot;
@@ -17,7 +18,8 @@ public class InventoryManager : UIToolKitConnectable
 
     private void Start()
     {
-        var labels = _rootElement.Query<Button>().Where(element => element.name == _slotName).ToList(); ;
+        var labels = _rootElement.Query<Button>().Where(element => element.name == _slotName).ToList();
+        _slotGroup = _rootElement.Q<VisualElement>(_slotGroupName);
         foreach (Button label in labels) {
             _slots.Add(label); 
         }
@@ -28,10 +30,9 @@ public class InventoryManager : UIToolKitConnectable
             newInventoryObject.ID_Slot = i;
             Items[i] = newInventoryObject;
             int localIndex = i;
-            _slots[i].RegisterCallback<MouseMoveEvent>(DraggingSlots);
-            _slots[i].RegisterCallback<ClickEvent>(ev => OnSlotDown(ev, localIndex));
+             _slots[i].RegisterCallback<ClickEvent>(ev => OnSlotDown(ev, localIndex));
             _slots[i].RegisterCallback<PointerUpEvent>(ev => OnSlotUp(ev, localIndex));
-        
+            _slotGroup.RegisterCallback<MouseMoveEvent>(DraggingSlots);
         }
     }
 
@@ -40,7 +41,9 @@ public class InventoryManager : UIToolKitConnectable
         foreach (InventoryObject item in Items) 
             if (item.Item != null)
                 DisplaySlots(item);
+
     }
+
     private void DisplaySlots(InventoryObject item) 
     {
         item.Slot.style.backgroundImage = item.Item.ico_Item.texture;
@@ -57,25 +60,28 @@ public class InventoryManager : UIToolKitConnectable
             _selectedSlot.style.position = Position.Absolute;
         }
     }
+
     private void OnSlotUp(PointerUpEvent evt, int index)
     {
         if (Items[index].Item != null)
         {
-            _selectedSlot = null;
-            isClikced = false;
+            //_selectedSlot = null;
+           // isClikced = false;
         }
     }
+
     private void DraggingSlots(MouseMoveEvent evt)
     {
         if (isClikced)
         {
             if (_selectedSlot != null)
             {
-                Vector2 localPosition = _selectedSlot.parent.WorldToLocal(new Vector2(evt.mousePosition.x, evt.mousePosition.y));
+                Vector2 localPosition = _selectedSlot.parent.WorldToLocal(evt.mousePosition);
+                Debug.LogWarning(localPosition);
                 float centerX = _selectedSlot.resolvedStyle.width / 2;
                 float centerY = _selectedSlot.resolvedStyle.height / 2;
 
-                _selectedSlot.style.top = localPosition.y - centerY;
+                _selectedSlot.style.top = (localPosition.y - centerY);
                 _selectedSlot.style.left = localPosition.x - centerX;
             }
         }

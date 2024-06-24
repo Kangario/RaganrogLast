@@ -10,6 +10,7 @@ public class MovingPanel : UIToolKitConnectable
     [SerializeField] private string _groupUIName = "InventoryGroup";
     [SerializeField] private VisualElement _groupUI; 
     [SerializeField] private Vector2 _startPosition;
+
     private bool _isOpening;
 
     public bool IsOpening => _isOpening;
@@ -18,14 +19,16 @@ public class MovingPanel : UIToolKitConnectable
 
     public void OpenPanel()
     {
-        _groupUI=  _rootElement.Q<VisualElement>(_groupUIName);
+        _groupUI =  _rootElement.Q<VisualElement>(_groupUIName);
         _groupUI.style.bottom = 0;
+        _groupUI.style.left = 0;
         _isOpening = true;
     }
     public void ClosePanel()
     {
         _groupUI=  _rootElement.Q<VisualElement>(_groupUIName);
         _groupUI.style.bottom = _startPosition.y;
+        _groupUI.style.left = _startPosition.x;
         _isOpening = false;
     }
 }

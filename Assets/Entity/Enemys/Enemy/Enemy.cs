@@ -18,6 +18,7 @@ namespace REnemy
         private EnemyVision enemy_Vision;
         private EnemyStats enemy_Stats;
         public EnemyAttack ReadOnly_Enemy_Attacking { get { return enemy_Attack; } private set { } }
+
         private void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -27,6 +28,7 @@ namespace REnemy
             enemy_Vision = new EnemyVision(enemy_Type, gameObject);
             MoveRandom = StartCoroutine(enemy_Move.GenerateVectorEvery3Seconds());
         }
+
         private void FixedUpdate()
         {
             if (isMove)
@@ -42,6 +44,7 @@ namespace REnemy
                 enemy_Move.JumpMove(direction);
             }
         }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.layer == 3)
@@ -54,6 +57,7 @@ namespace REnemy
 
             }
         }
+
         private void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.gameObject.layer == 3)
@@ -63,6 +67,12 @@ namespace REnemy
                 isMove = false;
 
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.black;
+            Gizmos.DrawWireSphere(transform.position, enemy_Type.Radius_Attack_Enemy);
         }
 
     }

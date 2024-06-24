@@ -37,4 +37,5 @@ MonoBehaviour:
   speed_Player: 1
   damage_Player: 2
   interval_Attack_Player: 1
-  range_Attack_Player: 1
+  range_Attack_Player: 0.27
+  range_Attack_Player_Circle: 0.08

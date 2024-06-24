@@ -1,13 +1,14 @@
 .hoverStyle:hover {
     font-size: 80px;
+    -unity-font: url('project://database/Assets/Fonts/Keleti-Regular.ttf?fileID=12800000&guid=e9fafa7994a6ff54dba9f9cd42fabf0c&type=3#Keleti-Regular');
 }
 
 .hoverStyle {
     font-size: 70px;
     color: rgb(255, 255, 255);
     margin-bottom: 60px;
-    border-left-width: 0;
-    border-right-width: 0;
+    border-left-width: 4px;
+    border-right-width: 4px;
     border-top-width: 4px;
     border-bottom-width: 4px;
     border-left-color: rgb(0, 0, 0);
@@ -25,6 +26,8 @@
     padding-right: 0;
     padding-top: 0;
     padding-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.11);
+    -unity-font: url('project://database/Assets/Fonts/Keleti-Regular.ttf?fileID=12800000&guid=e9fafa7994a6ff54dba9f9cd42fabf0c&type=3#Keleti-Regular');
 }
 
 .hoverStyle:selected {
@@ -33,4 +36,100 @@
     padding-left: 0;
     padding-top: 15px;
     padding-bottom: 15px;
+    -unity-font: url('project://database/Assets/Fonts/Keleti-Regular.ttf?fileID=12800000&guid=e9fafa7994a6ff54dba9f9cd42fabf0c&type=3#Keleti-Regular');
+}
+
+.unity-base-text-field__input {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.unity-text-element--inner-input-field-component {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.unity-base-slider__dragger {
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+    background-color: rgb(168, 255, 0);
+    height: 75%;
+    width: 45px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.unity-base-slider__tracker {
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.31);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.unity-base-slider__dragger-border {
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.unity-slider__label {
+    -unity-font-style: bold;
+    font-size: 25px;
+    margin-top: 25px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.unity-label {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.unity-base-field__input {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+}
+
+.unity-base-popup-field__arrow {
+    width: 7%;
+    height: 50%;
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.unity-base-popup-field__input {
+    background-color: rgba(0, 0, 0, 0.31);
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
 }

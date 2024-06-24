@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stone 2
   m_EditorClassIdentifier: 
   nameObject: 2
-  spriteObject: {fileID: 349617562, guid: e221c106ad4844148ac38b33aacbe847, type: 3}
+  spriteObject: {fileID: 21300000, guid: 16e45a6371cf2ac4486e82db60b42cd7, type: 3}
   rangeHeightMin: 0.6
   rangeHeightMax: 1
   id: 32

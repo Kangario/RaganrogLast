@@ -49,6 +49,18 @@ namespace RPlayer
                 player_Stats.Player_Speed = character_Preset.speed_Player;
             }
         }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, character_Preset.range_Attack_Player);
+
+            if (player_Attack != null)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawWireSphere(player_Attack.PositionAttack, character_Preset.range_Attack_Player_Circle);
+            }
+        }
     }
 }
 

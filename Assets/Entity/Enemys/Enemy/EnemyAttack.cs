@@ -8,6 +8,7 @@ namespace REnemy
         private EnemyStats enemy_Stats;
         private GameObject target;
         private GameObject currentObject;
+
         public EnemyAttack(GameObject target, GameObject currentObject, EnemyStats enemy_Stats)
         {
             this.target = target;
@@ -20,7 +21,6 @@ namespace REnemy
 
             if (distants <= AttackRange)
             {
-
                 target.GetComponent<Player>().ReadOnly_Player_Attacking.ApplyDamage(Damage);
             }
 
@@ -60,8 +60,11 @@ namespace REnemy
         {
             while (true)
             {
-                this.target = target;
-                Attack(AttackRange, Damage);
+                //Таргет по которому аттака происходит
+              //  this.target = target;
+                //Функция твоей атаки, у меня это Attack.
+              //  Attack(AttackRange, Damage);
+                //Интерфал атаки.
                 yield return new WaitForSeconds(Interval_Attack_Enemy);
             }
         }

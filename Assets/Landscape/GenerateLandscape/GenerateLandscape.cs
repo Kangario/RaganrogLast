@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RLandscape
 {
-    public class GenerateLandscape : MonoBehaviour , IGenerateLandscape
+    public class GenerateLandscape : MonoBehaviour, IGenerateLandscape
     {
         [SerializeField] public List<LandscapeElementsArray> landscapeElementsArray = new List<LandscapeElementsArray>();
         [SerializeField] public List<LandscapeDecorArray> landscapeDecorArray = new List<LandscapeDecorArray>();
@@ -11,6 +11,8 @@ namespace RLandscape
         [SerializeField] private int decorFrequency = 0;
         [SerializeField] private int sizeWorld = 0;
         [SerializeField] private float offset = 0;
+        [SerializeField] private GameObject parent;
+        [SerializeField] private GameObject parentDecor;
         private RLoadWorld loadWorld;
         private System.Random random = new System.Random();
         public void GenerateDecor()
@@ -37,12 +39,26 @@ namespace RLandscape
                                 spawnedObject.AddComponent<BoxCollider2D>();
                                 if (landscapeDecorArray[i].landscapeDecor[typeDecor].nameObject == classDecor.Tree)
                                 {
-                                    spawnedObject.GetComponent<BoxCollider2D>().size = new Vector2(0.25f, 0.25f);
-                                    spawnedObject.GetComponent<BoxCollider2D>().offset = new Vector2(0, -0.45f);
-
+                                    switch (landscapeDecorArray[i].landscapeDecor[typeDecor].id)
+                                    {
+                                        case 1000:
+                                        spawnedObject.GetComponent<BoxCollider2D>().size = new Vector2(0.25f, 0.28f);
+                                        spawnedObject.GetComponent<BoxCollider2D>().offset = new Vector2(0, -0.54f);
+                                            break;
+                                        case 1002:
+                                        spawnedObject.GetComponent<BoxCollider2D>().size = new Vector2(0.15f, 0.1f);
+                                        spawnedObject.GetComponent<BoxCollider2D>().offset = new Vector2(-0.02f, -0.4f);
+                                            break;
+                                        default:
+                                            spawnedObject.GetComponent<BoxCollider2D>().size = new Vector2(0.25f, 0.25f);
+                                            spawnedObject.GetComponent<BoxCollider2D>().offset = new Vector2(0, -0.45f);
+                                            break;
+                                    }
+                                    
                                 }
                                 spawnedObject.transform.position = new Vector2(x * 0.32f, y * 0.32f);
                                 spawnedObject.GetComponent<SpriteRenderer>().sortingOrder = orderLayer;
+                                spawnedObject.transform.parent = parentDecor.transform;
                                 landscapeObjects.Add(spawnedObject);
                                 SaveLandscapeData(spawnedObject, landscapeDecorArray[i].landscapeDecor[typeDecor].id, i, typeDecor);
 
@@ -77,6 +93,7 @@ namespace RLandscape
                                 spawnedObject.AddComponent<BoxCollider2D>();
                             }
                             spawnedObject.transform.position = new Vector2(x * 0.32f, y * 0.32f);
+                            spawnedObject.transform.parent = parent.transform;
                             landscapeObjects.Add(spawnedObject);
                             SaveLandscapeData(spawnedObject, landscapeElementsArray[i].landscapeElement[type].id, i, type);
                             break;
@@ -97,7 +114,7 @@ namespace RLandscape
             ld.numberTiles = numberTile;
             landscapeData.Add(ld);
         }
-       
+
         private void Start()
         {
             loadWorld = new RLoadWorld(gameObject.GetComponent<GenerateLandscape>());

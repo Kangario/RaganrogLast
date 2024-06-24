@@ -13,6 +13,8 @@ namespace RPlayer
         private Character_Object character_Preset;
         private Animator animator;
         private bool workCoroutin = false;
+        private Vector2 positionAttack = Vector2.zero;
+        public Vector2 PositionAttack { get { return positionAttack; } }
         public bool WorkCoroutin
         {
             get
@@ -41,9 +43,10 @@ namespace RPlayer
         {
             Vector2 currentPosition = new Vector2(currentObject.transform.position.x, currentObject.transform.position.y);
             Vector2 directionAttack = joystic_Attack.inputDirection.normalized * character_Preset.range_Attack_Player;
-            directionAttack = directionAttack.normalized / 7;
+            directionAttack = directionAttack.normalized / 6;
             directionAttack += currentPosition;
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(directionAttack, 0.06f);
+            positionAttack = directionAttack;
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(directionAttack,character_Preset.range_Attack_Player_Circle);
             Collider2D[] boxCollider = colliders.Where(c => c is BoxCollider2D).ToArray();
             foreach (Collider2D colider in boxCollider)
             {
@@ -68,6 +71,9 @@ namespace RPlayer
                 DeadEvent.OnEnemyDied(currentObject);
             }
         }
+
+        
+
         public IEnumerator AttackWait()
         {
             while (true)

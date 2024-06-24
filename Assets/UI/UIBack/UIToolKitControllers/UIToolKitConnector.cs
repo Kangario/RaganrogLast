@@ -2,10 +2,10 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[RequireComponent(typeof(UIDocument))]
+
 public abstract class UIToolKitConnector : MonoBehaviour
 {
-    protected UIDocument _document;
+    public UIDocument _document;
     protected VisualElement _rootView;
 
     public virtual UIDocument Document

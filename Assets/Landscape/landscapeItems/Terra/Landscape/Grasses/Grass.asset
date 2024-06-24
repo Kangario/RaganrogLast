@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Grass
   m_EditorClassIdentifier: 
   nameObject: 1
-  spriteObject: {fileID: 358588617, guid: e221c106ad4844148ac38b33aacbe847, type: 3}
+  spriteObject: {fileID: 21300000, guid: 64cef4d875ddb854c9420ac6e8105686, type: 3}
   rangeHeightMin: 0.35
   rangeHeightMax: 0.6
   id: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RLandscape;
+using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(fileName = "NewlandscapeElements", menuName = "Landscape/CreateLandscapeElements")]
 public class LandscapeElements : ScriptableObject

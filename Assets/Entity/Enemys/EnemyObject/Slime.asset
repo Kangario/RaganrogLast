@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID_Enemy: 0
   Name_Enemy: Slime
-  Type_Move_Enemy: 1
   Image_Enemy: {fileID: 1953500592, guid: 9c0748f38db7e0b4e9fdd449b0d1fe12, type: 3}
   Animator_Enemy: {fileID: 9100000, guid: 43f5d97ae38f748489cc95b12166ed9c, type: 2}
   Health_Enemy:
@@ -32,8 +31,8 @@ MonoBehaviour:
     level: 1
   Damage_Enemy: 0
   Interval_Attack_Enemy: 1
-  Speed_Enemy: 0.6
-  Radius_Attack_Enemy: 0.25
+  Speed_Enemy: 1
+  Radius_Attack_Enemy: 0.4
   Vision_Field_Enemy:
   - {x: 1, y: -1}
   - {x: 1, y: 1}
