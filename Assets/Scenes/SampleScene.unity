@@ -212,7 +212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6955bf81828384cb3401462f9cc2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _document: {fileID: 0}
   typeBar: 0
+  _stateBarName: Health
 --- !u!1 &100701396
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,9 +375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8056c20743b07a149ad91f25213a492a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystickBackground: {fileID: 138236535}
-  touch_Element: {fileID: 1157300327}
-  inputDirection: {x: 0, y: 0}
+  _document: {fileID: 0}
+  Joystick: Joystick-Left
+  _offset: {x: 0, y: 0}
 --- !u!114 &138236535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,6 +710,50 @@ PolygonCollider2D:
       - {x: 0.099999994, y: -0.12}
       - {x: 0.099999994, y: -0.06}
   m_UseDelaunayMesh: 0
+--- !u!1 &184857820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184857821}
+  - component: {fileID: 184857822}
+  m_Layer: 5
+  m_Name: MovingInventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &184857821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184857820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2139986794}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &184857822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184857820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19166471002de741b194d61b8466f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &186745585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1186,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 3b6e6c8e53cc03842b8fbcc092214be6, type: 2}
+--- !u!1 &325144913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 325144914}
+  - component: {fileID: 325144915}
+  m_Layer: 5
+  m_Name: Health
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &325144914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325144913}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2139986794}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &325144915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325144913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6955bf81828384cb3401462f9cc2d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _document: {fileID: 2139986795}
+  typeBar: 0
+  _stateBarName: Health
 --- !u!1 &330470284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,7 +1993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &564184522
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2362,9 +2455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8056c20743b07a149ad91f25213a492a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystickBackground: {fileID: 626518769}
-  touch_Element: {fileID: 599681016}
-  inputDirection: {x: 0, y: 0}
+  _document: {fileID: 0}
+  Joystick: Joystick-Left
+  _offset: {x: 0, y: 0}
 --- !u!114 &626518769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2868,6 +2961,100 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &755876691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 755876692}
+  - component: {fileID: 755876693}
+  m_Layer: 5
+  m_Name: Joystick-Left
+  m_TagString: Controller_Move
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &755876692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755876691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2139986794}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &755876693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755876691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8056c20743b07a149ad91f25213a492a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _document: {fileID: 2139986795}
+  Joystick: Joystick-Left
+  _offset: {x: -12, y: -12}
+--- !u!1 &783191901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 783191902}
+  - component: {fileID: 783191903}
+  m_Layer: 5
+  m_Name: Stamina
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &783191902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783191901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2139986794}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &783191903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783191901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6955bf81828384cb3401462f9cc2d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _document: {fileID: 2139986795}
+  typeBar: 2
+  _stateBarName: Stamina
 --- !u!1 &799742772
 GameObject:
   m_ObjectHideFlags: 0
@@ -3318,7 +3505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &869845123
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4175,7 +4362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6955bf81828384cb3401462f9cc2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _document: {fileID: 0}
   typeBar: 2
+  _stateBarName: Health
 --- !u!1 &1016554845
 GameObject:
   m_ObjectHideFlags: 0
@@ -4320,6 +4509,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 3b6e6c8e53cc03842b8fbcc092214be6, type: 2}
+--- !u!1 &1039797255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1039797256}
+  - component: {fileID: 1039797257}
+  m_Layer: 5
+  m_Name: Joystick-Right
+  m_TagString: Controller_Attack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1039797256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039797255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2139986794}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1039797257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039797255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8056c20743b07a149ad91f25213a492a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _document: {fileID: 2139986795}
+  Joystick: Joystick-Right
+  _offset: {x: -12, y: -12}
 --- !u!1 &1085754388
 GameObject:
   m_ObjectHideFlags: 0
@@ -5030,7 +5266,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6955bf81828384cb3401462f9cc2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _document: {fileID: 0}
   typeBar: 1
+  _stateBarName: Health
 --- !u!1 &1204880519
 GameObject:
   m_ObjectHideFlags: 0
@@ -5048,7 +5286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1204880520
 Transform:
   m_ObjectHideFlags: 0
@@ -5262,7 +5500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1242585298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5682,7 +5920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1303038259
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5715,6 +5953,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303038258}
   m_CullTransparentMesh: 1
+--- !u!1 &1385555082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385555083}
+  - component: {fileID: 1385555084}
+  m_Layer: 5
+  m_Name: Mana
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1385555083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385555082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2139986794}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1385555084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385555082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6955bf81828384cb3401462f9cc2d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _document: {fileID: 2139986795}
+  typeBar: 1
+  _stateBarName: Mana
 --- !u!1 &1432729453
 GameObject:
   m_ObjectHideFlags: 0
@@ -6643,10 +6928,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4636ab3faa4ed8f41bcb99f25b0dd3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonTake: {fileID: 2032287112}
+  _document: {fileID: 2139986795}
+  _buttonTakeName: TakeButton
   _rangeTakeItems: 0.24
   _itemsInRange: []
   _inventory: {fileID: 2139986801}
+--- !u!1 &1530155310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1530155311}
+  - component: {fileID: 1530155312}
+  m_Layer: 5
+  m_Name: Invent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1530155311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530155310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2139986794}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1530155312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530155310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8ad10005c61354087a1f47d6ce7d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _document: {fileID: 2139986795}
+  buttons:
+  - ButtonName: Inventory
+    ButtonUnityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2139986798}
+          m_TargetAssemblyTypeName: MovingPanel, Assembly-CSharp
+          m_MethodName: OpenPanel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  ButtonsType: []
 --- !u!1 &1540076911
 GameObject:
   m_ObjectHideFlags: 0
@@ -7204,6 +7553,54 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &1671815117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1671815118}
+  - component: {fileID: 1671815119}
+  m_Layer: 5
+  m_Name: ScrollController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1671815118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671815117}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2139986794}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1671815119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671815117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c442f479845198a488592c98baf768d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _document: {fileID: 2139986795}
+  _slotGroupName: ContainerForSlots
+  _slotBackName: SlotBack
+  _speedScroll: 1
 --- !u!1 &1673380639
 GameObject:
   m_ObjectHideFlags: 0
@@ -9062,7 +9459,15 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 184857821}
+  - {fileID: 1671815118}
+  - {fileID: 755876692}
+  - {fileID: 1039797256}
+  - {fileID: 1530155311}
+  - {fileID: 325144914}
+  - {fileID: 1385555083}
+  - {fileID: 783191902}
   m_Father: {fileID: 1639007548}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9095,7 +9500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8ad10005c61354087a1f47d6ce7d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _document: {fileID: 0}
+  _document: {fileID: 2139986795}
   buttons:
   - ButtonName: TabClosePanel
     ButtonUnityEvent:
@@ -9174,7 +9579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3c07373b9ab2144acc7bc0fbe7e4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _document: {fileID: 0}
+  _document: {fileID: 2139986795}
   _groupUIName: InventoryGroup
   _startPosition: {x: 0, y: 1500}
 --- !u!114 &2139986799
@@ -9189,7 +9594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63006481b9ce69c469a20326b4212380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _document: {fileID: 0}
+  _document: {fileID: 2139986795}
   _panels:
   - Inventory
   - Attributes
@@ -9226,9 +9631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf870ca24ec9a28449f2c84283e6761e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _document: {fileID: 0}
+  _document: {fileID: 2139986795}
   _slotName: Slot
-  _slotGroupName: SlotMoveLayot
+  _moverSlots: {fileID: 184857822}
   Items:
   - ID_Slot: 0
     slotStatus: 0

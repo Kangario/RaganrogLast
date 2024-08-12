@@ -2,22 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
-public class UI_State_Controller : MonoBehaviour
+public class UI_State_Controller : UIToolKitConnectable
 {   
     [SerializeField] private PlayerStat typeBar;
-    private Image image_Component;
+    [SerializeField] private string _stateBarName = "Health";
+    private StatProgress _stat;
+
+    private void Awake() => Connect();
+
     private void Start()
     {
         Charactres_Events.typeChange += ChangeBar;
-        image_Component = GetComponent<Image>();
+        _stat = _rootElement.Q<StatProgress>(_stateBarName);
     }
     private void ChangeBar(PlayerStat type, LimitedNumber value)
     {
 
         if (type == typeBar)
         {
-            image_Component.fillAmount = value.value/value.Threshold;
+            _stat.Progress = value.value/value.Threshold;
         }
     }
 }

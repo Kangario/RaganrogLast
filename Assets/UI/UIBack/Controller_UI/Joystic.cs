@@ -1,57 +1,32 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
+
 namespace RController
 {
-    public class Joystic : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler , IJoystic
+    public class Joystic : UIToolKitConnectable
     {
-        [SerializeField] private Image joystickBackground;
-        [SerializeField] private Image touch_Element;
+        [SerializeField] private string Joystick = "Joystick-Left";
+        [SerializeField] private Vector2 _offset;
+        private JoystickElement _joystickElement;
+        
+        private void Awake() => Connect();
 
-        public Vector2 inputDirection = Vector2.zero;
-        public void OnPointerDown(PointerEventData eventData)
+        private void Start()
         {
+            _joystickElement = _rootElement.Q<JoystickElement>(Joystick);
 
-            OnDrag(eventData);
-        }
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            inputDirection = Vector2.zero;
-            touch_Element.rectTransform.anchoredPosition = Vector2.zero;
-            if (gameObject.transform.tag == "Controller_Attack")
-            {
-                Charactres_Events.StopAttackDragJoystick();
-            }
-
-        }
-        public void OnDrag(PointerEventData eventData)
-        {
-            Vector2 position;
-            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                joystickBackground.rectTransform,
-                eventData.position,
-                eventData.pressEventCamera,
-                out position))
-            {
-                position.x = (position.x / joystickBackground.rectTransform.sizeDelta.x);
-                position.y = (position.y / joystickBackground.rectTransform.sizeDelta.y);
-
-                inputDirection = new Vector2(position.x * 2, position.y * 2);
-                inputDirection = (inputDirection.magnitude > 1.0f) ? inputDirection.normalized : inputDirection;
-
-                touch_Element.rectTransform.anchoredPosition =
-                    new Vector2(inputDirection.x * (joystickBackground.rectTransform.sizeDelta.x / 3),
-                                inputDirection.y * (joystickBackground.rectTransform.sizeDelta.y / 3));
-            }
-            if (gameObject.transform.tag == "Controller_Attack")
-            {
-                Charactres_Events.AttackDragJoystick();
-            }
+            _joystickElement.RegisterCallback<PointerDownEvent>(_joystickElement.OnPointerDown);
+            _rootElement.RegisterCallback<PointerUpEvent>(_joystickElement.OnPointerUp);
+            _rootElement.RegisterCallback<PointerMoveEvent>(_joystickElement.OnPointerMove);
+            _joystickElement.SetObject(gameObject);
+            _joystickElement.SetOffset(_offset);
         }
 
         public Vector2 GetInputDirection()
         {
-            return inputDirection;
+            return _joystickElement.Direction;
         }
     }
 }

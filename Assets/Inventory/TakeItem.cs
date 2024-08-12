@@ -1,23 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEditor.Progress;
+using UnityEngine.Events;
+using UnityEngine.UIElements;
 
-public class TakeItem : MonoBehaviour
+public class TakeItem : UIToolKitConnectable
 {
-    [SerializeField] private Button _buttonTake;
+    [SerializeField] private string _buttonTakeName = "TakeButton";
     [SerializeField] private float _rangeTakeItems;
     [SerializeField] private List<GameObject> _itemsInRange = new List<GameObject>();
     [SerializeField] private InventoryManager _inventory;
+    [SerializeField] private UnityEvent _addItemEvent;
+    private Button _buttonTake;
+    private void Awake() => Connect();
 
+    private void Start()
+    {
+        _buttonTake = _rootElement.Q<Button>(_buttonTakeName);
+        _buttonTake.clicked += TakeItems;
+
+    }
     private void Update()
     {
+
         CheckTriggerObjectsInRange(_rangeTakeItems);
         if (_itemsInRange.Count > 0)
-            _buttonTake.gameObject.SetActive(true);
+            _buttonTake.style.display = DisplayStyle.Flex;
         else
-            _buttonTake.gameObject.SetActive(false);
+            _buttonTake.style.display = DisplayStyle.None;
     }
 
     public void TakeItems()
@@ -52,7 +62,7 @@ public class TakeItem : MonoBehaviour
         if (_inventory.Items[i].qantity_Item.value == _inventory.Items[i].qantity_Item.Threshold)
             _inventory.Items[i].slotStatus = Slot_Status.Filled;
         Destroy(_itemsInRange[0]);
-        
+        _addItemEvent?.Invoke();
     }
 
     private void FoldItem(Item_Object itemTemp, int i)

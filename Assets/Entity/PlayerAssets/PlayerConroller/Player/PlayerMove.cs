@@ -17,7 +17,7 @@ namespace RPlayer
         }
         public void ControlPlayer()
         {
-            Vector2 direction = joystic_Move.inputDirection;
+            Vector2 direction = joystic_Move.GetInputDirection();
             rb.velocity = direction * character_Stat.Player_Speed;
             direction = direction.normalized;
             animator.SetFloat("X", direction.x);

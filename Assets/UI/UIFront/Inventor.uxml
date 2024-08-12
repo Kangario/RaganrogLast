@@ -1,5 +1,26 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/UIFront/Inventor.uss?fileID=7433441132597879392&amp;guid=3719f57e55b11b946931fab5c603934b&amp;type=3#Inventor" />
+    <ui:VisualElement name="HUD" style="background-color: rgba(0, 0, 0, 0); position: absolute; width: 100%; height: 100%;">
+        <ui:VisualElement name="Experience" style="height: 7px;">
+            <ui:VisualElement name="BackgroundExperience" style="flex-grow: 1; background-color: rgb(0, 0, 0); position: absolute; width: 100%; height: 100%;" />
+            <ui:VisualElement name="ProgressExperience" style="flex-grow: 1; background-color: rgb(255, 243, 0); position: absolute; width: 100%; height: 100%;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Header" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; height: 60%;">
+            <ui:VisualElement name="GroupStat" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 90%;">
+                <StatProgress name="Health" progress="0.28" style="width: 10%; height: 3%; margin-top: 1px;" />
+                <StatProgress name="Mana" progress="1" style="width: 10%; height: 3%; margin-top: 1px;" />
+                <StatProgress name="Stamina" style="width: 10%; height: 3%; margin-top: 1px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="GroupButton" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; width: 11%; justify-content: space-between;">
+                <ui:Button display-tooltip-when-elided="true" name="TakeButton" style="width: 100px; height: 15%; background-image: url(&apos;project://database/Assets/Icons/TakeIco.png?fileID=2800000&amp;guid=6c5519c214fab4746948dd4f4dfbc6fb&amp;type=3#TakeIco&apos;); background-color: rgba(188, 188, 188, 0); top: 100px; display: flex; position: absolute; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
+                <ui:Button display-tooltip-when-elided="true" name="Inventory" style="background-image: url(&apos;project://database/Assets/Icons/Pixel%20Art%20Icon%20Pack%20-%20RPG/Equipment/InventIcons.png?fileID=2800000&amp;guid=f20e937a06f44d043be97095840aab68&amp;type=3#InventIcons&apos;); background-color: rgba(188, 188, 188, 0); height: 15%; width: 100px; position: absolute; left: 100px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Body" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between; align-self: auto; align-items: flex-end; height: 30%;">
+            <JoystickElement name="Joystick-Left" class="joystick" style="background-image: url(&apos;project://database/Assets/UI/UIBack/Controller_UI/Assets_For_joystic/circle_PNG55.png?fileID=2800000&amp;guid=510f496ca56faaa4aab788ba8010bf79&amp;type=3#circle_PNG55&apos;);" />
+            <JoystickElement name="Joystick-Right" class="joystick" style="background-image: url(&apos;project://database/Assets/UI/UIBack/Controller_UI/Assets_For_joystic/circle_PNG55.png?fileID=2800000&amp;guid=510f496ca56faaa4aab788ba8010bf79&amp;type=3#circle_PNG55&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
     <ui:VisualElement name="InventoryGroup" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); bottom: 1500px; transition-timing-function: linear; transition-duration: 0.3s; flex-direction: column;">
         <ui:VisualElement name="Header" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.39); align-self: auto; align-items: flex-end; flex-direction: row; overflow: hidden; opacity: 1;">
             <ui:Button text="Button" display-tooltip-when-elided="true" name="TabInventory" class="styleTabs" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/Group%201.png?fileID=2800000&amp;guid=5065ffc8ac050614e9f71ed8355a0474&amp;type=3#Group 1&apos;); background-color: rgba(255, 255, 255, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
@@ -8,128 +29,71 @@
             <ui:Button text="Button" display-tooltip-when-elided="true" name="TabClosePanel" class="styleTabs" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/Group%205.png?fileID=2800000&amp;guid=07503785e916f8f41a8bd4d65c402917&amp;type=3#Group 5&apos;); background-color: rgba(188, 188, 188, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; align-self: auto; flex-direction: column; margin-left: 73%;" />
         </ui:VisualElement>
         <ui:VisualElement name="PanleGroup" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: 80%;">
-            <ui:VisualElement name="Inventory" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; overflow: hidden; width: auto; height: auto; visibility: visible; align-self: auto; justify-content: flex-end; transition-duration: 1s; transition-timing-function: linear; display: flex; transition-property: bottom;">
-                <ui:VisualElement focusable="false" name="Background" style="flex-grow: 1; background-color: rgb(0, 0, 0); align-self: auto; align-items: auto; width: auto; -unity-text-align: lower-left; -unity-background-scale-mode: stretch-to-fill; height: 90%; justify-content: flex-end; flex-direction: row; overflow: hidden; margin-bottom: 0;">
-                    <ui:VisualElement name="SlotsBack" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-self: flex-start; width: 25%; align-items: flex-start; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; font-size: 2px; margin-right: 0; margin-left: 0; margin-top: 0; height: 100%; flex-shrink: 1; padding-right: 0; padding-left: 0;">
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
-                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="SlotBack" class="styleSlot" style="color: rgba(255, 255, 255, 0);" />
+            <ui:VisualElement name="Inventory" style="flex-grow: 1; background-color: rgb(0, 0, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; overflow: hidden; width: auto; height: auto; visibility: visible; align-self: auto; justify-content: flex-end; transition-duration: 1s; transition-timing-function: linear; display: flex; transition-property: bottom; flex-direction: row;">
+                <ui:VisualElement name="SlotBack" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-wrap: wrap; flex-direction: row; min-height: 100%; max-height: 100%; height: 100%; width: 26.5%; max-width: 26.5%; min-width: 26.5%;">
+                    <ui:ScrollView name="ContainerForSlots" vertical-scroller-visibility="Hidden" style="width: 100%; max-height: 95%; max-width: 100%; min-height: 95%; min-width: 100%; height: 95%; margin-top: 0;">
+                        <ui:VisualElement name="Slot" tabindex="0" class="styleSlot">
+                            <ui:VisualElement name="SlotBack" class="slotBack" />
+                            <ui:Label tabindex="-1" text="10" display-tooltip-when-elided="true" name="SlotLabel" class="slotLabel" style="display: none;" />
+                        </ui:VisualElement>
+                    </ui:ScrollView>
+                </ui:VisualElement>
+                <ui:VisualElement name="EquipsBackground" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-self: flex-start; width: 70%; align-items: center; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; font-size: 2px; margin-right: 0; margin-left: 0.2px; margin-top: 0.2%; height: 100%; border-top-width: 0; border-left-width: 0; -unity-paragraph-spacing: 0; overflow: hidden;">
+                    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15%; height: 100%;">
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip" style="margin-top: 0;">
+                            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2011.png?fileID=2800000&amp;guid=e2001c8179b58334786c44948772a2d7&amp;type=3#image 11&apos;);" />
+                        </ui:Label>
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
+                            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2013.png?fileID=2800000&amp;guid=1b451b0d728147b4099bf672513d2cf3&amp;type=3#image 13&apos;);" />
+                        </ui:Label>
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
+                            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2014.png?fileID=2800000&amp;guid=b54990cab2346ff46a56bb0ab2a7050f&amp;type=3#image 14&apos;);" />
+                        </ui:Label>
                     </ui:VisualElement>
-                    <ui:VisualElement name="Equips" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-self: flex-start; width: 70%; align-items: center; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; font-size: 2px; margin-right: 0; margin-left: 0.2px; margin-top: 0.2%; height: 100%; border-top-width: 0; border-left-width: 0; -unity-paragraph-spacing: 0; overflow: hidden;">
-                        <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 20%; height: 100%;">
-                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
-                                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2011.png?fileID=2800000&amp;guid=e2001c8179b58334786c44948772a2d7&amp;type=3#image 11&apos;);" />
-                            </ui:Label>
-                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
-                                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2013.png?fileID=2800000&amp;guid=1b451b0d728147b4099bf672513d2cf3&amp;type=3#image 13&apos;);" />
-                            </ui:Label>
-                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
-                                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2014.png?fileID=2800000&amp;guid=b54990cab2346ff46a56bb0ab2a7050f&amp;type=3#image 14&apos;);" />
-                            </ui:Label>
-                        </ui:VisualElement>
-                        <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 20%; height: 100%; margin-left: 1%;">
-                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
-                                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%207.png?fileID=2800000&amp;guid=b6ac45049804ffb43bb88e1d39560079&amp;type=3#image 7&apos;);" />
-                            </ui:Label>
-                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
-                                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%208.png?fileID=2800000&amp;guid=b7468885d4a38b244a13e2fb91ad93bf&amp;type=3#image 8&apos;);" />
-                            </ui:Label>
-                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
-                                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%209.png?fileID=2800000&amp;guid=8359290246256304ca308765dfa33dd8&amp;type=3#image 9&apos;); width: 35%; margin-left: 32%;" />
-                            </ui:Label>
-                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
-                                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2010.png?fileID=2800000&amp;guid=44c0a81af23da0f46b0ee3f6efc1fb4a&amp;type=3#image 10&apos;);" />
-                            </ui:Label>
-                        </ui:VisualElement>
-                        <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 20%; height: 100%; margin-left: 1%;">
-                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip" style="overflow: hidden;">
-                                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2011.png?fileID=2800000&amp;guid=e2001c8179b58334786c44948772a2d7&amp;type=3#image 11&apos;);" />
-                            </ui:Label>
-                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
-                                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2012.png?fileID=2800000&amp;guid=bb2be1ca4b90ab941a6133a7e30d39d0&amp;type=3#image 12&apos;);" />
-                            </ui:Label>
-                        </ui:VisualElement>
-                        <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 40%; height: 100%; flex-direction: row; align-items: flex-end; margin-left: 0; justify-content: flex-start;">
-                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip" style="width: 48%; margin-top: 0; margin-bottom: 2%; margin-left: 0; height: 23%;">
+                    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15%; height: 100%;">
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip" style="margin-top: 0;">
+                            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%207.png?fileID=2800000&amp;guid=b6ac45049804ffb43bb88e1d39560079&amp;type=3#image 7&apos;);" />
+                        </ui:Label>
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
+                            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%208.png?fileID=2800000&amp;guid=b7468885d4a38b244a13e2fb91ad93bf&amp;type=3#image 8&apos;);" />
+                        </ui:Label>
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
+                            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%209.png?fileID=2800000&amp;guid=8359290246256304ca308765dfa33dd8&amp;type=3#image 9&apos;); width: 35%; margin-left: 32%;" />
+                        </ui:Label>
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
+                            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2010.png?fileID=2800000&amp;guid=44c0a81af23da0f46b0ee3f6efc1fb4a&amp;type=3#image 10&apos;);" />
+                        </ui:Label>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15%; height: 100%;">
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip" style="overflow: hidden; margin-top: 0;">
+                            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2011.png?fileID=2800000&amp;guid=e2001c8179b58334786c44948772a2d7&amp;type=3#image 11&apos;);" />
+                        </ui:Label>
+                        <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip">
+                            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2012.png?fileID=2800000&amp;guid=bb2be1ca4b90ab941a6133a7e30d39d0&amp;type=3#image 12&apos;);" />
+                        </ui:Label>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 45%; height: 100%; flex-direction: column; align-items: flex-end; margin-left: 0; justify-content: flex-start;">
+                        <ui:VisualElement name="IcoGroup" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; height: 80%;" />
+                        <ui:VisualElement name="AttackGroup" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row-reverse; width: 100%; height: 30%;">
+                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip" style="width: 30%; margin-top: 0; margin-bottom: 2%; margin-left: 0; height: 90%; margin-right: 15%;">
                                 <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2015.png?fileID=2800000&amp;guid=31f68f1970ac6f44391c580dfcf58fed&amp;type=3#image 15&apos;);" />
                             </ui:Label>
-                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip" style="width: 48%; margin-top: 0; margin-bottom: 2%; padding-left: 0; margin-left: 2%; height: 23%; margin-right: 0;">
+                            <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="EquipBackground" class="styleEquip" style="width: 30%; margin-top: 0; margin-bottom: 2%; padding-left: 0; margin-left: 2%; height: 90%; margin-right: 2%;">
                                 <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Content" class="styleContent" style="background-image: url(&apos;project://database/Assets/Sprites/UI/Inventory/image%2015.png?fileID=2800000&amp;guid=31f68f1970ac6f44391c580dfcf58fed&amp;type=3#image 15&apos;);" />
                             </ui:Label>
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="Slots" usage-hints="GroupTransform" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-self: flex-start; width: 27.5%; align-items: flex-start; flex-direction: row; justify-content: flex-start; font-size: 2px; margin-right: 0; margin-left: 0; margin-top: 0; height: 100%; flex-shrink: 1; padding-right: 0; padding-left: 0; position: absolute; left: 0; flex-wrap: wrap;">
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                        <ui:Button text="0" display-tooltip-when-elided="true" name="Slot" usage-hints="DynamicTransform" class="styleSlot" style="color: rgba(255, 255, 255, 0); background-color: rgba(45, 45, 45, 0);" />
-                    </ui:VisualElement>
-                    <ui:VisualElement name="SlotMoveLayot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute; width: 100%; height: 100%;" />
+                    <ui:VisualElement name="NecklaceSlot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15.6%; height: 22%; position: absolute; top: 0;" />
+                    <ui:VisualElement name="HelmetSlot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15.6%; height: 22%; position: absolute; left: 17.5%; top: 0;" />
+                    <ui:VisualElement name="NecklaceSlot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15.6%; height: 22%; position: absolute; left: 35%; top: 0;" />
+                    <ui:VisualElement name="RingSlot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15.6%; height: 22%; position: absolute; left: 0; top: 24%;" />
+                    <ui:VisualElement name="CuirassSlot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15.6%; height: 22%; position: absolute; left: 17.5%; top: 24%;" />
+                    <ui:VisualElement name="GlovesSlot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15.6%; height: 22%; position: absolute; left: 35%; top: 24%;" />
+                    <ui:VisualElement name="BeltSlot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15.6%; height: 22%; position: absolute; left: 0; top: 48.2%;" />
+                    <ui:VisualElement name="LeggingsSlot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15.6%; height: 22%; position: absolute; left: 17.5%; top: 48.4%;" />
+                    <ui:VisualElement name="BootsSlot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15.6%; height: 22%; position: absolute; left: 17.5%; top: 72.5%;" />
+                    <ui:VisualElement name="WeaponSlot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 14.2%; height: 22%; position: absolute; left: 63.3%; top: 75%;" />
+                    <ui:VisualElement name="WeaponSlot" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 14.2%; height: 22%; position: absolute; left: 78.5%; top: 75%;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Attributes" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; overflow: hidden; width: 100%; height: 100%; visibility: visible; align-self: auto; justify-content: flex-end; transition-duration: 1s; transition-timing-function: linear; position: absolute; display: none; transition-property: bottom;">

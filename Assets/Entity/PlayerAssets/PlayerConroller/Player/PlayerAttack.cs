@@ -42,7 +42,7 @@ namespace RPlayer
         public void Attack()
         {
             Vector2 currentPosition = new Vector2(currentObject.transform.position.x, currentObject.transform.position.y);
-            Vector2 directionAttack = joystic_Attack.inputDirection.normalized * character_Preset.range_Attack_Player;
+            Vector2 directionAttack = joystic_Attack.GetInputDirection().normalized * character_Preset.range_Attack_Player;
             directionAttack = directionAttack.normalized / 6;
             directionAttack += currentPosition;
             positionAttack = directionAttack;
@@ -56,10 +56,11 @@ namespace RPlayer
 
                 }
             }
-            directionAttack = joystic_Attack.inputDirection.normalized;
+            directionAttack = joystic_Attack.GetInputDirection().normalized;
             animator.SetFloat("XAttack", directionAttack.x);
             animator.SetFloat("YAttack", directionAttack.y);
         }
+
         public void ApplyDamage(float Damage)
         {
             if (player_Stats.Health.value > 0)
@@ -71,8 +72,6 @@ namespace RPlayer
                 DeadEvent.OnEnemyDied(currentObject);
             }
         }
-
-        
 
         public IEnumerator AttackWait()
         {
