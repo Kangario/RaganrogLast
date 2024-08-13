@@ -8,9 +8,9 @@ using Unity.VisualScripting;
 
 public class InventoryManager : UIToolKitConnectable
 {
-    [SerializeField] private string _parrentName = "ContainerForSlots"; 
+    [SerializeField] private string _parrentName = "ContainerForSlots";
     [SerializeField] private InventoryMover _moverSlots;
-    private List<Button> _slots = new List<Button>();
+    public List<SlotContainer> Slots;
     public InventoryObject[] Items;
     public bool isClikced;
     private Scroller _containerForSlots;
@@ -30,10 +30,16 @@ public class InventoryManager : UIToolKitConnectable
 
     public void DisplaySlots() 
     {
-        
+        if (Items.Length > Slots.Count)
+        {
+            for(int i = Slots.Count; i <= Items.Length; i++)
+            {
+                AddNewSlot(Items[i].Item.ico_Item, Items[i].qantity_Item);
+            }
+        }
     }
     
-    private void AddNewSlot(Texture2D image, LimitedNumber quantity)
+    private void AddNewSlot(Sprite image, LimitedNumber quantity)
     {
         VisualElement slot = new VisualElement();
         slot.AddToClassList("styleSlot");
@@ -43,37 +49,10 @@ public class InventoryManager : UIToolKitConnectable
         slotQuantity.AddToClassList("slotLabel");
         slot.Add(slotBack);
         slot.Add(slotQuantity);
-        slotBack.style.backgroundImage = image;
+        slotBack.style.backgroundImage = image.texture;
         slotQuantity.style.display = DisplayStyle.Flex;
         slotQuantity.text = quantity.value.ToString();
         _containerForSlots.Add(slot);
-    }
-
-    private void OnSlotDown(ClickEvent evt, int index)
-    {
-
-        if (Items[index].Item != null)
-        {
-            _moverSlots.OnSlotDown();
-            isClikced= true;
-        }
-    }
-
-    private void OnSlotUp(PointerUpEvent evt, int index)
-    {
-
-        if (Items[index].Item != null)
-        {
-            _moverSlots.OnSlotUp(_slots[index]);
-        }
-    }
-
-    private void DraggingSlots(MouseMoveEvent evt)
-    {
-        if (isClikced)
-        {
-            _moverSlots.SlotMove(evt);
-        }
     }
 
 }

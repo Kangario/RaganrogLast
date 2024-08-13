@@ -20,6 +20,7 @@ public class TakeItem : UIToolKitConnectable
         _buttonTake.clicked += TakeItems;
 
     }
+
     private void Update()
     {
 
